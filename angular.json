@@ -1,6 +1,88 @@
 {
   "version": 1,
   "projects": {
+    "bootstrap": {
+      "projectType": "library",
+      "root": "libs/bootstrap",
+      "sourceRoot": "libs/bootstrap/src",
+      "prefix": "osuidev",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/bootstrap"],
+          "options": {
+            "project": "libs/bootstrap/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/bootstrap/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/bootstrap/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/bootstrap"],
+          "options": {
+            "jestConfig": "libs/bootstrap/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/bootstrap/src/**/*.ts",
+              "libs/bootstrap/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "dialog": {
+      "projectType": "library",
+      "root": "libs/dialog",
+      "sourceRoot": "libs/dialog/src",
+      "prefix": "osui",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/dialog"],
+          "options": {
+            "project": "libs/dialog/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/dialog/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/dialog/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/dialog"],
+          "options": {
+            "jestConfig": "libs/dialog/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/dialog/src/**/*.ts",
+              "libs/dialog/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "www": {
       "projectType": "application",
       "root": "apps/www",

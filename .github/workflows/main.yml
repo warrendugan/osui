@@ -40,3 +40,6 @@ jobs:
 
       - name: Publish
         run: npm run affected:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GPR_AUTOMATION_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTOMATION_TOKEN }}

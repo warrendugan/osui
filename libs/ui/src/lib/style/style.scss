@@ -1,12 +1,15 @@
 :root {
   --light: #fafafa;
   --dark: #424242;
+}
 
-  body {
-    background-color: var(--light);
-  }
+body {
+  background-color: var(--dark);
+}
 
-  h1 {
+$headings: h1 h2 h3 h4 h5 h6;
+@each $heading in $headings {
+  #{$heading} {
     color: var(--dark);
   }
 }

@@ -8,16 +8,15 @@ export class StyleService {
   private document!: Document;
   private list!: StyleSheetList;
   private style = Styles;
-  private key = ':root';
+  private key = '}\n';
   private trash = '/*#';
 
   constructor() {
     this.document = document;
     this.list = this.document.styleSheets;
-    console.log(this.style);
     `${this.style}`.split(this.key).forEach((rule: string) => {
       if (!rule || rule.startsWith(this.trash)) return;
-      const result = this.key + rule;
+      const result = rule + this.key;
       this.list.item(0)?.insertRule(result);
     });
   }

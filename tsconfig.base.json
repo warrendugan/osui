@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@osuidev/bootstrap": ["libs/bootstrap/src/index.ts"],
-      "@osuidev/dialog": ["libs/dialog/src/index.ts"]
+      "@osuidev/dialog": ["libs/dialog/src/index.ts"],
+      "@osuidev/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

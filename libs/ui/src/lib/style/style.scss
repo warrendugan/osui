@@ -1,0 +1,12 @@
+:root {
+  --light: #fafafa;
+  --dark: #424242;
+
+  body {
+    background-color: var(--light);
+  }
+
+  h1 {
+    color: var(--dark);
+  }
+}
